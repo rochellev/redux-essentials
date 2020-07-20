@@ -13,6 +13,7 @@ export const AddPostForm = () => {
   const onTitleChanged = e => setTitle(e.target.value)
   const onContentChanged = e => setContent(e.target.value)
 
+  // dispatch post added with new post data object
   const onSavePostClicked = () => {
     if(title && content){
       dispatch(
