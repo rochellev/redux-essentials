@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { nanoid } from '@reduxjs/toolkit'
 
 // posts slice only knows about the data it's responsible for
 
@@ -42,5 +43,5 @@ const postsSlice = createSlice({
   }
 })
 
-export default postsSlice.reducer
 export const { postAdded, postUpdated } = postsSlice.actions
+export default postsSlice.reducer
