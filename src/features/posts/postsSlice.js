@@ -11,6 +11,8 @@ const initialState = [
 // (only data this slice is aware of)
 
 // Note: createSlice allows for mutable change ---it converts to safe immutable changes with Immer library behind scenes
+
+// action object look like {type: 'posts/postUpdated', payload: {id, title, content}}
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
@@ -30,4 +32,4 @@ const postsSlice = createSlice({
 })
 
 export default postsSlice.reducer
-export const { postAdded } = postsSlice.actions
+export const { postAdded, postUpdated } = postsSlice.actions
