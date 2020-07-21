@@ -12,8 +12,8 @@ export const PostsList = () => {
     <h3>{post.title}</h3>
     <p>{post.content.substring(0, 100)}</p>
     <Link to={`/posts/${post.id}`} className="button muted-button">
-      View Post!
-    </Link>
+        View Post
+      </Link>
   </article>
   ))
   
