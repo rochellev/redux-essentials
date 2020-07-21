@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom'
 
 // react router pass in match object
 export const SinglePostPage =({ match }) => {
-  const { postId } = match.params;
+  const { postId } = match.params
 
   // extract the post that matches the ID from store
   const post = useSelector( state =>
-    state.posts.find(post => post.id === postID)
+    state.posts.find(post => post.id === postId)
     )
 
     if(!post){
