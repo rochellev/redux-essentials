@@ -4,8 +4,8 @@ import { nanoid } from '@reduxjs/toolkit'
 // posts slice only knows about the data it's responsible for
 
 const initialState = [
-  { id: '1', title: 'First Post!', content: 'Hello!' },
-  { id: '2', title: 'Second Post', content: 'More text' }
+  { id: '1', title: 'First Post!', content: 'Hello!', user: '0'},
+  { id: '2', title: 'Second Post', content: 'More text', user: '1' }
 ]
 
 // state argument will be array of posts by itself 
