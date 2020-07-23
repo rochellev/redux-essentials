@@ -3,6 +3,7 @@ import { nanoid } from '@reduxjs/toolkit'
 
 // posts slice only knows about the data it's responsible for
 
+// might have to add date thing
 const initialState = [
   { id: '1', title: 'First Post!', content: 'Hello!', user: '0'},
   { id: '2', title: 'Second Post', content: 'More text', user: '1' }
@@ -26,6 +27,7 @@ const postsSlice = createSlice({
         return {
           payload: {
             id: nanoid(),
+            data: new Date().toISOString,
             title,
             content,
             user: userId
