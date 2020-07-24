@@ -5,8 +5,8 @@ import { nanoid } from '@reduxjs/toolkit'
 
 // might have to add date thing
 const initialState = [
-  { id: '1', title: 'First Post!', content: 'Hello!', user: '0'},
-  { id: '2', title: 'Second Post', content: 'More text', user: '1' }
+  { id: '1', title: 'Oh Hi', content: 'Mark. I didnt see you there', user: '0', reactions: {thumbsUp: 0, hooray: 0, heart: 4, rocket: 0, eyes: 1}},
+  { id: '2', title: 'Hello', content: 'Darkness my old friend', user: '1', reactions: {thumbsUp: 2, hooray: 0, heart: 0, rocket: 0, eyes: 0} }
 ]
 
 // state argument will be array of posts by itself 
@@ -42,9 +42,16 @@ const postsSlice = createSlice({
         existingPost.title = title
         existingPost.content = content
       }
+    },
+    reactionAdded(state, action){
+      const { postId, reaction} = action.payload
+      const existingPost = state.find(post => post.id === postId)
+      if(existingPost){
+        existingPost.reactions[reaction]++
+      }
     }
   }
 })
 
-export const { postAdded, postUpdated } = postsSlice.actions
+export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
 export default postsSlice.reducer
