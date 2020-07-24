@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {PostAuthor} from './PostAuthor'
+import {ReactionButtons} from './ReactionButtons'
 
 // useSelector so components can read data from redux store
 
@@ -15,6 +16,7 @@ export const PostsList = () => {
       <PostAuthor userId={post.user} />
     </div>
     <p>{post.content.substring(0, 100)}</p>
+    <ReactionButtons post={post} />
     <Link to={`/posts/${post.id}`} className="button muted-button">
         View Post
       </Link>
